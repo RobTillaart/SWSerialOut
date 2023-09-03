@@ -6,12 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [0.1.0] - 2023-09-02
-- revitalized as TX only SWSerial.
+- revitalized as transmit (TX) only SWSerial.
 - initial release
 
 ----
 
 ## [0.0.0] - 2012-12-21
-- proof of concept, baud rate by formula 
+- proof of concept, baud rate by formula
 - https://forum.arduino.cc/t/softwareserial-magic-numbers/135211
 

@@ -86,7 +86,6 @@ public:
       else if (_parity == 'O') bit = 1 - parity;  //  odd  # 1 bits
       else if (_parity == 'S') bit = 0;           //  always 0
       else if (_parity == 'M') bit = 1;           //  always 1
-    
       start = micros();
       digitalWrite(_TX, bit);
       while(micros() - start < _pulse);

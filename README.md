@@ -30,9 +30,9 @@ So its interface is similar to any Stream like Serial or SoftwareSerial,
 as the user can use **print()** and **println()** for al the output.
 
 The input side of the Stream interface, **available()**, **peek()**, 
-and read() are stubs returning 0.
+and **read()** are stubs returning 0.
 
-The library does not buffer the data, and therefore it can be blocking.
+The library does not need to buffer incoming data, and it does not buffer outgoing data either. Therefore it can be blocking.
 So use the library with care.
 
 
@@ -59,7 +59,7 @@ with a proper pull up resistor e.g. 4K7.
 |  100000  |   -   |    Y    |
 
 
-Note: the code is not optimized for any platform (yet). 
+Note: the code is not really optimized for any platform (yet). 
 So the library will not match the top speed of other software serial implementations.
 
 If you have tested this library with another platform, please let me know by
@@ -97,19 +97,19 @@ params is e.g. "8N1" = 8 bit, None parity, 1 stop-bit
 #### Stream interface
 
 The SWSerialOut implements the **public Stream** interface, so
-it will support the following functions (indirect from Print)
+it will support the following functions (indirect from Print):
 
 - **size_t write(char c)** idem.
-- **size_t print(T)** idem.
-- **size_t println(T)** idem.
+- **size_t print(...)** idem.
+- **size_t println(...)** idem.
 
 The input functions are stubs, just returning 0.
 
 
 #### Interrupts
 
-To have a more constant timing while sending the bits one can disable interrupts
-during the transfer of the data.
+To have a more constant timing while sending the bits one can disable 
+interrupts during the transfer of the data.
 
 - **void disableInterrupts(bool b)** enable/disable interrupts during send.
 
