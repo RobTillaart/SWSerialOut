@@ -7,6 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/SWSerialOut/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/SWSerialOut.svg?maxAge=3600)](https://github.com/RobTillaart/SWSerialOut/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/SWSerialOut.svg)](https://registry.platformio.org/libraries/robtillaart/SWSerialOut)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/HX711.svg?maxAge=3600)](https://registry.platformio.org/libraries/robtillaart/SWSerialOut)
 
 
 # SWSerialOut
