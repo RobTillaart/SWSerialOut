@@ -25,9 +25,12 @@ In those cases there is no need for the receive function, interrupt
 handling, buffers etc.
 
 This is where SWSerialOut comes in, it can only transmit data and does
-that by implementing the **public Print** interface.
-So it works quite similar to any Stream like Serial or SoftwareSerial,
+that by implementing the **public Stream** interface.
+So its interface is similar to any Stream like Serial or SoftwareSerial,
 as the user can use **print()** and **println()** for al the output.
+
+The input side of the Stream interface, **available()**, **peek()**, 
+and read() are stubs returning 0.
 
 The library does not buffer the data, and therefore it can be blocking.
 So use the library with care.
@@ -91,14 +94,16 @@ params is e.g. "8N1" = 8 bit, None parity, 1 stop-bit
 | stop bits |  0,1,2,3  |     1     |  to be tested
 
 
-#### Print interface
+#### Stream interface
 
-The SWSerialOut implements the **public Print** interface, so
-it will support the following functions.
+The SWSerialOut implements the **public Stream** interface, so
+it will support the following functions (indirect from Print)
 
 - **size_t write(char c)** idem.
 - **size_t print(T)** idem.
 - **size_t println(T)** idem.
+
+The input functions are stubs, just returning 0.
 
 
 #### Interrupts

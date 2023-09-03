@@ -14,7 +14,7 @@
 #define SWSERIALOUT_LIB_VERSION              (F("0.1.0"))
 
 
-class SWSerialOut : public Print
+class SWSerialOut : public Stream
 {
 public:
   SWSerialOut(uint8_t TXpin, bool inverse = false)
@@ -51,6 +51,7 @@ public:
   }
 
 
+  //  PRINT interface
   size_t write(uint8_t b)
   {
     if (_disableInterrupts)
@@ -107,6 +108,14 @@ public:
   }
 
 
+  //   STREAM interface (for compatibility)
+  int  available() { return 0; };
+  int  peek()      { return 0; };
+  int  read()      { return 0; };
+  void flush()     { return; };   //  placeholder to keep build CI happy
+
+
+  //  DEBUG
   void debug()
   {
     Serial.print("DBG: PIN");
